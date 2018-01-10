@@ -14,3 +14,16 @@ const UserType = new GraphQLObjectType({
     age: { type: GraphQLInt },
   }
 });
+
+const RootQueryType = new GraphQLObjectType({
+  name: 'RootQuery',
+  fields: {
+    user: {
+      type: UserType,
+      args: { id: { type: GraphQLString } },
+      resolve(parentValue, args) {
+
+      }
+    }
+  }
+});
